@@ -9,7 +9,7 @@ driver.maximize_window()
 
 class set_password:
     def set(self):
-        driver.implicitly_wait(6)
+        driver.implicitly_wait(10)
         profile = driver.find_element(By.XPATH, "/html/body/div/app-root/app-main/app-header/header/div/div[1]/div/ul/li[1]/img")
         profile.click()
         time.sleep(5)

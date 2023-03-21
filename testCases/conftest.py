@@ -4,5 +4,9 @@ import pytest
 
 @pytest.fixture()
 def setup():
-    driver = webdriver.Chrome()
-    return driver
+    browser = webdriver.Chrome()
+    browser.get("https://ibpodev.home.tatamotors/edukaan_ui/#/")
+    browser.maximize_window()
+    browser.implicitly_wait(10)
+    yield browser
+    browser.quit()
