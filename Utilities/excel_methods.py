@@ -1,15 +1,6 @@
-import openpyxl
-
-worksheet = openpyxl.load_workbook('C:\Selenium\EdukaanCLogin.xlsx')
-
-
-class BaseData:
-    def __init__(self, n):
-        self.sheet = worksheet["Login"]
-        # self.sheet = worksheet["Logout"]
-
-
-class ExcelMethods(BaseData):
+class ExcelMethods():
+    def __init__(self, sheet):
+        self.sheet = sheet
 
     def get_parametrize_list(self):
         self.del_existing_result_column()
@@ -31,7 +22,7 @@ class ExcelMethods(BaseData):
         else:
             status = 'FAILED'
         self.sheet.cell(row_number, column_number).value = status
-        worksheet.save("C:\Selenium\EdukaanCLogin.xlsx")
+
 
     def del_existing_result_column(self):
         list_with_values = []
@@ -39,7 +30,7 @@ class ExcelMethods(BaseData):
             list_with_values.append(cell.value)
         if 'Test Result' in list_with_values:
             self.sheet.delete_cols(self.sheet.max_column)
-        worksheet.save("C:\Selenium\EdukanTestData.xlsx")
+
 
     def get_result_column_number(self):
         list_with_values = []

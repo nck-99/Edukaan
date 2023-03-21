@@ -83,7 +83,7 @@ class LoginPage(BasePage):
         else:
             return False
 
-    def catch_error_msg(self):
+    def login_error_msg(self):
         err = self.find_element(self.Logout_err_msg)
         if bool(err) == 1:
             return True
@@ -91,5 +91,9 @@ class LoginPage(BasePage):
             return False
 
 
+class UserRegistration(LoginPage):
+    Registration = (By.LINK_TEXT, "Click here")
 
 
+    def click_register(self):
+        self.find_element(self.Registration).click()
