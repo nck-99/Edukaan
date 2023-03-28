@@ -1,4 +1,3 @@
-import time
 import pytest
 import openpyxl
 from pageObject import CustomerPage
@@ -6,7 +5,7 @@ from Utilities.excel_methods import ExcelMethods
 
 workbook = openpyxl.load_workbook('C:\Selenium\EdukaanCLogin.xlsx')
 
-class Test_Login_Logout_pos():
+class Test_Login_Logout():
     @pytest.mark.parametrize('Test_Case_ID,Objective,Mobile_NO,OTP,Condition,Expected_Results', ExcelMethods(workbook["Login"]).get_parametrize_list())
     def test_Login(self, setup, Test_Case_ID, Objective, Mobile_NO, OTP, Condition, Expected_Results):
         cp = CustomerPage.LoginPage(setup)
@@ -18,6 +17,7 @@ class Test_Login_Logout_pos():
             cp.wait(5)
             cp.enter_otp(OTP)
             cp.click_next()
+            cp.select_user()
             cp.wait(5)
             assert cp.verify_login() == True
             status = "TC PASSED"
@@ -41,9 +41,10 @@ class Test_Login_Logout_pos():
         cp.wait(5)
         cp.enter_otp("123456")
         cp.click_next()
+        cp.select_user()
         assert cp.verify_login() == True
-        time.sleep(10)
+        cp.wait(9)
         cp.user_details()
         cp.logout()
-        cp.wait(5)
         assert cp.verify_logout() == True
+
