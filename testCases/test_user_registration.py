@@ -36,3 +36,4 @@ class Test_User_registration:
 
         ExcelMethods(workbook["User_registration"]).update_result_in_excel(Test_Case_ID, status)
         workbook.save("C:\Selenium\EdukaanCLogin.xlsx")
+

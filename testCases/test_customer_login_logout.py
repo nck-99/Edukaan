@@ -1,3 +1,4 @@
+import time
 import pytest
 import openpyxl
 from pageObject import CustomerPage
@@ -43,7 +44,7 @@ class Test_Login_Logout():
         cp.click_next()
         cp.select_user()
         assert cp.verify_login() == True
-        cp.wait(9)
+        time.sleep(6)
         cp.user_details()
         cp.logout()
         assert cp.verify_logout() == True

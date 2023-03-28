@@ -54,10 +54,7 @@ class LoginPage(BasePage):
 
     def verify_login(self):
         self.wait(3)
-        try:
-            v = self.locate_by_visibility(self.VERIFY)
-        except NoSuchElementException:
-            pass
+        v = self.locate_by_visibility(self.VERIFY)
         if bool(v) == 1:
             return True
         else:
@@ -88,7 +85,7 @@ class LoginPage(BasePage):
 
 class UserRegistration(LoginPage):
 
-    Registration = (By.LINK_TEXT, "Click here")
+    Registration = (By.XPATH, "/html/body/div/app-root/app-main/section/app-login/section/div/mat-card/mat-card-content/form/div[2]/p[1]/a")
     MOBILE_txtbox = (By.XPATH, "/html/body/div/app-root/app-main/section/app-registration/section/div/mat-card/mat-card-content/form/div[1]/mat-form-field/div/div[1]/div[1]/input")
     SEND_OTP = (By.XPATH, "/html/body/div/app-root/app-main/section/app-registration/section/div/mat-card/mat-card-content/form/div[2]/button")
     YES_button = (By.XPATH, "/html/body/div[2]/div/div[6]/button[1]")
@@ -140,4 +137,5 @@ class UserRegistration(LoginPage):
 
     def submit_registration(self):
         self.find_element(self.REGISTER).click()
+
 
