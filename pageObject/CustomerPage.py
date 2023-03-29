@@ -48,6 +48,7 @@ class LoginPage(BasePage):
 
     def select_user(self):
         self.find_element(self.SELECT_FO).click()
+        time.sleep(3)
         self.find_element(self.User_ID_radio).click()
         self.find_element(self.Confirm_User).click()
 

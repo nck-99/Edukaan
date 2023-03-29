@@ -21,7 +21,7 @@ class TestSetPassword():
                 assert sp.verify_set_pw(setup, Password1, Mobile_no, Condition) == True
                 status = "TC PASSED"
             else:
-                pass
+                status = "TC FAILED"
         elif Condition == "-":
             assert sp.verify_set_pw(setup, Password2, Mobile_no, Condition) == False
             status = "TC PASSED"

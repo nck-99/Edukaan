@@ -1,8 +1,7 @@
-import time
-
 from selenium.webdriver.common.by import By
 from BasePage.Base_Page import BasePage
 from selenium.webdriver.common.keys import Keys
+import time
 
 
 class Whish_List(BasePage):
