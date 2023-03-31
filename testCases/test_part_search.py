@@ -7,6 +7,7 @@ from Utilities.excel_methods import ExcelMethods
 
 workbook = openpyxl.load_workbook('C:\Selenium\EdukaanCLogin.xlsx')
 
+
 class Test_Part_Search():
     @pytest.mark.parametrize('Test_Case_ID,Objective,Type,Data,Condition,Expected_Results', ExcelMethods(workbook["Part_Search"]).get_parametrize_list())
     def test_part_search(self, setup, Test_Case_ID, Objective, Type, Data, Condition, Expected_Results):

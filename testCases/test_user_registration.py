@@ -2,6 +2,7 @@ import time
 import pytest
 import openpyxl
 from pageObject import CustomerPage
+from pageObject import WhishList
 from Utilities.excel_methods import ExcelMethods
 
 workbook = openpyxl.load_workbook('C:\Selenium\EdukaanCLogin.xlsx')

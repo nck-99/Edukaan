@@ -42,7 +42,7 @@ class Test_WhishList:
 
     def test_move_to_cart(self, setup):
         sp = SETPassword.SetPassword(setup)
-        sp.static_login(setup, "8828091027")
+        sp.static_login(setup)
         wl = WhishList.Whish_List(setup)
         wl.search_part("Wheel")
         time.sleep(5)

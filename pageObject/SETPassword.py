@@ -42,16 +42,16 @@ class SetPassword(BasePage):
             else:
                 return False
 
-        def static_login(self, setup, mno):
+        def static_login(self, setup):
             cp = LoginPage(setup)
             cp.select_Login()
-            cp.enter_mobileno(mno)
+            cp.enter_mobileno("9921927315")
             cp.click_send_otp()
             cp.wait(3)
             cp.enter_otp("123456")
             cp.click_next()
             time.sleep(3)
-            cp.select_user()
+
 
 
 

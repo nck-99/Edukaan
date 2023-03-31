@@ -7,7 +7,7 @@ class Test_CartActions:
 
     def test_add_to_cart(self, setup):
         sp = SETPassword.SetPassword(setup)
-        sp.static_login(setup, "8828091027")
+        sp.static_login(setup)
         wl = WhishList.Whish_List(setup)
         wl.search_part("Wheel")
         time.sleep(5)
@@ -20,7 +20,7 @@ class Test_CartActions:
 
     def test_neg_add_to_cart(self, setup):
         sp = SETPassword.SetPassword(setup)
-        sp.static_login(setup, "8828091027")
+        sp.static_login(setup)
         wl = WhishList.Whish_List(setup)
         wl.search_part("Wheel")
         time.sleep(5)
@@ -32,7 +32,7 @@ class Test_CartActions:
 
     def test_remove_from_cart(self, setup):
         sp = SETPassword.SetPassword(setup)
-        sp.static_login(setup, "8828091027")
+        sp.static_login(setup)
         ca = CartActions.Cart_Actions(setup)
         ca.view_cart()
         ca.clear_cart()

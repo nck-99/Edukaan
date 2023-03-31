@@ -10,7 +10,7 @@ class TestSetPassword():
     @pytest.mark.parametrize('Test_Case_ID,Objective,Mobile_no,Password1,Password2,Condition,Expected_Results', ExcelMethods(workbook["Set_Password"]).get_parametrize_list())
     def test_set_password(self, setup, Test_Case_ID, Objective, Mobile_no, Password1, Password2, Condition, Expected_Results):
         sp = SETPassword.SetPassword(setup)
-        sp.static_login(setup, Mobile_no)
+        sp.static_login(setup, "9921927315")
         time.sleep(9)
         sp.click_user_profile()
         sp.set_password()
